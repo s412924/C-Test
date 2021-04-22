@@ -1,0 +1,306 @@
+namespace Namespace {
+    
+    using sched;
+    
+    using time;
+    
+    using turtle;
+    
+    using System.Collections.Generic;
+    
+    public static class Module {
+        
+        public static object s = sched.scheduler(time.time, time.sleep);
+        
+        public static object times = open("traveltimes", "a+");
+        
+        public static object planets = new List<object> {
+            "Sun",
+            "Mercury",
+            "Venus",
+            "Earth",
+            "Mars",
+            "Jupiter",
+            "Saturn",
+            "Uranus",
+            "Neptune",
+            "Pluto",
+            "test"
+        };
+        
+        public static object distances = new Dictionary<object, object> {
+            {
+                "Sun",
+                0},
+            {
+                "Mercury",
+                6.12388062083704E-06},
+            {
+                "Venus",
+                1.13972222665578E-05},
+            {
+                "Earth",
+                1.58200249371623E-05},
+            {
+                "Mars",
+                2.41553068933017E-05},
+            {
+                "Jupiter",
+                8.23321727912535E-05},
+            {
+                "Saturn",
+                0.000150545398595577},
+            {
+                "Uranus",
+                0.000302791875141387},
+            {
+                "Neptune",
+                0.00047460074811487},
+            {
+                "Pluto",
+                0.000456308}};
+        
+        public static object lastinput = new List<object>();
+        
+        static Module() {
+            turtle.register_shape("lightspeed.gif");
+            turtle.register_shape("Sun.gif");
+            space.setup(500, 500);
+            time.sleep(round(Time(), 3));
+            turtle.shape("Sun.gif");
+            lastinput.append(coordinates);
+            turtle.register_shape("Mercury.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(470, 330);
+            turtle.shape("Mercury.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(600, 530);
+            turtle.shape("Mercury.gif");
+            exit;
+            turtle.register_shape("Venus.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(470, 330);
+            turtle.shape("Venus.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(600, 530);
+            turtle.shape("Venus.gif");
+            exit;
+            turtle.register_shape("Earth.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(470, 330);
+            turtle.shape("Earth.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(600, 530);
+            turtle.shape("Earth.gif");
+            exit;
+            turtle.register_shape("Mars.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(470, 330);
+            turtle.shape("Mars.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(600, 530);
+            turtle.shape("Mars.gif");
+            exit;
+            turtle.register_shape("Jupiter.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(600, 530);
+            turtle.shape("Jupiter.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(600, 530);
+            turtle.shape("Jupiter.gif");
+            exit;
+            turtle.register_shape("Saturn.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(800, 330);
+            turtle.shape("Saturn.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(300, 330);
+            turtle.shape("Saturn.gif");
+            exit;
+            turtle.register_shape("Uranus.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(800, 320);
+            turtle.shape("Saturn.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(800, 320);
+            turtle.shape("Uranus.gif");
+            exit;
+            turtle.register_shape("Neptune.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(800, 330);
+            turtle.shape("Neptune.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(300, 330);
+            turtle.shape("Neptune.gif");
+            exit;
+            turtle.register_shape("Pluto.gif");
+            space.setup(500, 500);
+            turtle.shape("lightspeed.gif");
+            time.sleep(0.5);
+            space.setup(470, 340);
+            turtle.shape("Pluto.gif");
+            turtle.shape("lightspeed.gif");
+            space.setup(500, 500);
+            time.sleep(1);
+            space.setup(470, 340);
+            turtle.shape("Pluto.gif");
+            exit;
+        }
+        
+        public static object coordinates = input(@"
+Where would you like to go? 
+Use proper case please.
+Type Orbit to exit. ");
+        
+        public static object seconds() {
+            var seconds = Time();
+            seconds -= 1;
+            return seconds;
+        }
+        
+        public static object Time() {
+            var Time = 50855.08 * distances[coordinates] * 10;
+            return Time;
+        }
+        
+        public static object hours() {
+            var hours = Time() / 24;
+            return hours;
+        }
+        
+        public static object minutes() {
+            var minutes = hours() / 60;
+            return minutes;
+        }
+        
+        public static object timeses = Time();
+        
+        public static object hours = hours();
+        
+        public static object space = turtle.Screen();
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object lightspeed = turtle.Turtle();
+        
+        public static object skip = input("That will take longer than 60 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 60 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 60 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 60 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 20 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 20 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 20 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 20 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+        
+        public static object millennium_falcon = turtle.Turtle();
+        
+        public static object space = turtle.Screen();
+        
+        public static object skip = input("That will take longer than 20 seconds, would you like to skip to the end? ");
+        
+        public static object timeses = 1;
+        
+        public static object exit = input("Would you like to exit hyperspace? ");
+    }
+}
